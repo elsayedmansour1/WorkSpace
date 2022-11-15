@@ -1,0 +1,17 @@
+21:59:38 **** Incremental Build of configuration Debug for project Mady_EEPROM_TEST ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Mady_EEPROM_TEST.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    6018 bytes (18.4% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 

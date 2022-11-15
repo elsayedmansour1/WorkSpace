@@ -1,0 +1,22 @@
+MCAL/TIMER/TIMER_Program.o MCAL/TIMER/TIMER_Program.o:  \
+ ../MCAL/TIMER/TIMER_Program.c ../MCAL/TIMER/../../LIB/STD_TYPES.h \
+  ../MCAL/TIMER/../../LIB/BIT_MATH.h ../MCAL/TIMER/TIMER_Register.h \
+  ../MCAL/TIMER/TIMER_Interface.h ../MCAL/TIMER/TIMER_CONFIG.h \
+  ../MCAL/TIMER/TIMER0_Define.h ../MCAL/TIMER/TIMER1_Define.h \
+  ../MCAL/TIMER/TIMER2_Define.h
+
+../MCAL/TIMER/../../LIB/STD_TYPES.h:
+
+../MCAL/TIMER/../../LIB/BIT_MATH.h:
+
+../MCAL/TIMER/TIMER_Register.h:
+
+../MCAL/TIMER/TIMER_Interface.h:
+
+../MCAL/TIMER/TIMER_CONFIG.h:
+
+../MCAL/TIMER/TIMER0_Define.h:
+
+../MCAL/TIMER/TIMER1_Define.h:
+
+../MCAL/TIMER/TIMER2_Define.h:

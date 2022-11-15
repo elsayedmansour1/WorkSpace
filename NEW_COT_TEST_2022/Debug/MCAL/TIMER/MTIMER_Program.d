@@ -1,0 +1,14 @@
+MCAL/TIMER/MTIMER_Program.o MCAL/TIMER/MTIMER_Program.o:  \
+ ../MCAL/TIMER/MTIMER_Program.c ../MCAL/TIMER/../../LIB/LSTD_TYPES.h \
+  ../MCAL/TIMER/../../LIB/LBIT_MATH.h ../MCAL/TIMER/MTIMER_Config.h \
+  ../MCAL/TIMER/MTIMER_Interface.h ../MCAL/TIMER/MTIMER_Register.h
+
+../MCAL/TIMER/../../LIB/LSTD_TYPES.h:
+
+../MCAL/TIMER/../../LIB/LBIT_MATH.h:
+
+../MCAL/TIMER/MTIMER_Config.h:
+
+../MCAL/TIMER/MTIMER_Interface.h:
+
+../MCAL/TIMER/MTIMER_Register.h:

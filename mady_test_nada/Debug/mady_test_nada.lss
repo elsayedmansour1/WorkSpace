@@ -1,0 +1,543 @@
+
+mady_test_nada.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000332  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .bss          00000006  00800060  00800060  000003a6  2**0
+                  ALLOC
+  2 .stab         000005a0  00000000  00000000  000003a8  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  3 .stabstr      0000048f  00000000  00000000  00000948  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
+   4:	0c 94 07 01 	jmp	0x20e	; 0x20e <__vector_1>
+   8:	0c 94 34 01 	jmp	0x268	; 0x268 <__vector_2>
+   c:	0c 94 61 01 	jmp	0x2c2	; 0x2c2 <__vector_3>
+  10:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  14:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  18:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  1c:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  20:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  24:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  28:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  2c:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  30:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  34:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  38:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  3c:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  40:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  44:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  48:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  4c:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  50:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d8 e0       	ldi	r29, 0x08	; 8
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+
+00000060 <__do_clear_bss>:
+  60:	10 e0       	ldi	r17, 0x00	; 0
+  62:	a0 e6       	ldi	r26, 0x60	; 96
+  64:	b0 e0       	ldi	r27, 0x00	; 0
+  66:	01 c0       	rjmp	.+2      	; 0x6a <.do_clear_bss_start>
+
+00000068 <.do_clear_bss_loop>:
+  68:	1d 92       	st	X+, r1
+
+0000006a <.do_clear_bss_start>:
+  6a:	a6 36       	cpi	r26, 0x66	; 102
+  6c:	b1 07       	cpc	r27, r17
+  6e:	e1 f7       	brne	.-8      	; 0x68 <.do_clear_bss_loop>
+  70:	0e 94 8e 01 	call	0x31c	; 0x31c <main>
+  74:	0c 94 97 01 	jmp	0x32e	; 0x32e <_exit>
+
+00000078 <__bad_interrupt>:
+  78:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+0000007c <EXTI1_init>:
+void (*Global_EXTI0_ptr)(void)=NULL;
+void (*Global_EXTI1_ptr)(void)=NULL;
+void (*Global_EXTI2_ptr)(void)=NULL;
+
+void EXTI1_init(void)
+{
+  7c:	df 93       	push	r29
+  7e:	cf 93       	push	r28
+  80:	cd b7       	in	r28, 0x3d	; 61
+  82:	de b7       	in	r29, 0x3e	; 62
+    #if sense_mode==low_level
+    CLR_BIT(MCUCR_Register,ISC11);
+  84:	a5 e5       	ldi	r26, 0x55	; 85
+  86:	b0 e0       	ldi	r27, 0x00	; 0
+  88:	e5 e5       	ldi	r30, 0x55	; 85
+  8a:	f0 e0       	ldi	r31, 0x00	; 0
+  8c:	80 81       	ld	r24, Z
+  8e:	87 7f       	andi	r24, 0xF7	; 247
+  90:	8c 93       	st	X, r24
+    CLR_BIT(MCUCR_Register,ISC10);
+  92:	a5 e5       	ldi	r26, 0x55	; 85
+  94:	b0 e0       	ldi	r27, 0x00	; 0
+  96:	e5 e5       	ldi	r30, 0x55	; 85
+  98:	f0 e0       	ldi	r31, 0x00	; 0
+  9a:	80 81       	ld	r24, Z
+  9c:	8b 7f       	andi	r24, 0xFB	; 251
+  9e:	8c 93       	st	X, r24
+    CLR_BIT(MCUCR_Register,ISC01);
+  a0:	a5 e5       	ldi	r26, 0x55	; 85
+  a2:	b0 e0       	ldi	r27, 0x00	; 0
+  a4:	e5 e5       	ldi	r30, 0x55	; 85
+  a6:	f0 e0       	ldi	r31, 0x00	; 0
+  a8:	80 81       	ld	r24, Z
+  aa:	8d 7f       	andi	r24, 0xFD	; 253
+  ac:	8c 93       	st	X, r24
+    CLR_BIT(MCUCR_Register,ISC00);
+  ae:	a5 e5       	ldi	r26, 0x55	; 85
+  b0:	b0 e0       	ldi	r27, 0x00	; 0
+  b2:	e5 e5       	ldi	r30, 0x55	; 85
+  b4:	f0 e0       	ldi	r31, 0x00	; 0
+  b6:	80 81       	ld	r24, Z
+  b8:	8e 7f       	andi	r24, 0xFE	; 254
+  ba:	8c 93       	st	X, r24
+    SET_BIT(MCUCR_Register,ISC11);
+    SET_BIT(MCUCR_Register,ISC10);
+    SET_BIT(MCUCR_Register,ISC01);
+    SET_BIT(MCUCR_Register,ISC00);
+    #endif
+}
+  bc:	cf 91       	pop	r28
+  be:	df 91       	pop	r29
+  c0:	08 95       	ret
+
+000000c2 <EXTI0_init>:
+
+void EXTI0_init(void)
+{
+  c2:	df 93       	push	r29
+  c4:	cf 93       	push	r28
+  c6:	cd b7       	in	r28, 0x3d	; 61
+  c8:	de b7       	in	r29, 0x3e	; 62
+    #if sense_mode==low_level
+    CLR_BIT(MCUCR_Register,ISC01);
+  ca:	a5 e5       	ldi	r26, 0x55	; 85
+  cc:	b0 e0       	ldi	r27, 0x00	; 0
+  ce:	e5 e5       	ldi	r30, 0x55	; 85
+  d0:	f0 e0       	ldi	r31, 0x00	; 0
+  d2:	80 81       	ld	r24, Z
+  d4:	8d 7f       	andi	r24, 0xFD	; 253
+  d6:	8c 93       	st	X, r24
+    CLR_BIT(MCUCR_Register,ISC00);
+  d8:	a5 e5       	ldi	r26, 0x55	; 85
+  da:	b0 e0       	ldi	r27, 0x00	; 0
+  dc:	e5 e5       	ldi	r30, 0x55	; 85
+  de:	f0 e0       	ldi	r31, 0x00	; 0
+  e0:	80 81       	ld	r24, Z
+  e2:	8e 7f       	andi	r24, 0xFE	; 254
+  e4:	8c 93       	st	X, r24
+    CLR_BIT(MCUCR_Register,ISC00);
+    #elif sense_mode==any_change
+    SET_BIT(MCUCR_Register,ISC01);
+    SET_BIT(MCUCR_Register,ISC00);
+    #endif
+}
+  e6:	cf 91       	pop	r28
+  e8:	df 91       	pop	r29
+  ea:	08 95       	ret
+
+000000ec <EXTI2_init>:
+
+void EXTI2_init(void)
+{
+  ec:	df 93       	push	r29
+  ee:	cf 93       	push	r28
+  f0:	cd b7       	in	r28, 0x3d	; 61
+  f2:	de b7       	in	r29, 0x3e	; 62
+    #if sense_mode==rising_edge
+    SET_BIT(MCUSR_Register,ISC2);
+    #elif sense_mode==falling_edge
+    CLR_BIT(MCUSR_Register,ISC2);
+    #endif
+}
+  f4:	cf 91       	pop	r28
+  f6:	df 91       	pop	r29
+  f8:	08 95       	ret
+
+000000fa <EXTI0_enable>:
+
+void EXTI0_enable(void)
+{
+  fa:	df 93       	push	r29
+  fc:	cf 93       	push	r28
+  fe:	cd b7       	in	r28, 0x3d	; 61
+ 100:	de b7       	in	r29, 0x3e	; 62
+    SET_BIT(GICR_Register,INT0);
+ 102:	ab e5       	ldi	r26, 0x5B	; 91
+ 104:	b0 e0       	ldi	r27, 0x00	; 0
+ 106:	eb e5       	ldi	r30, 0x5B	; 91
+ 108:	f0 e0       	ldi	r31, 0x00	; 0
+ 10a:	80 81       	ld	r24, Z
+ 10c:	80 64       	ori	r24, 0x40	; 64
+ 10e:	8c 93       	st	X, r24
+}
+ 110:	cf 91       	pop	r28
+ 112:	df 91       	pop	r29
+ 114:	08 95       	ret
+
+00000116 <EXTI1_enable>:
+
+void EXTI1_enable(void)
+{
+ 116:	df 93       	push	r29
+ 118:	cf 93       	push	r28
+ 11a:	cd b7       	in	r28, 0x3d	; 61
+ 11c:	de b7       	in	r29, 0x3e	; 62
+    SET_BIT(GICR_Register,INT1);
+ 11e:	ab e5       	ldi	r26, 0x5B	; 91
+ 120:	b0 e0       	ldi	r27, 0x00	; 0
+ 122:	eb e5       	ldi	r30, 0x5B	; 91
+ 124:	f0 e0       	ldi	r31, 0x00	; 0
+ 126:	80 81       	ld	r24, Z
+ 128:	80 68       	ori	r24, 0x80	; 128
+ 12a:	8c 93       	st	X, r24
+}
+ 12c:	cf 91       	pop	r28
+ 12e:	df 91       	pop	r29
+ 130:	08 95       	ret
+
+00000132 <EXTI2_enable>:
+
+void EXTI2_enable(void)
+{
+ 132:	df 93       	push	r29
+ 134:	cf 93       	push	r28
+ 136:	cd b7       	in	r28, 0x3d	; 61
+ 138:	de b7       	in	r29, 0x3e	; 62
+    SET_BIT(GICR_Register,INT2);
+ 13a:	ab e5       	ldi	r26, 0x5B	; 91
+ 13c:	b0 e0       	ldi	r27, 0x00	; 0
+ 13e:	eb e5       	ldi	r30, 0x5B	; 91
+ 140:	f0 e0       	ldi	r31, 0x00	; 0
+ 142:	80 81       	ld	r24, Z
+ 144:	80 62       	ori	r24, 0x20	; 32
+ 146:	8c 93       	st	X, r24
+}
+ 148:	cf 91       	pop	r28
+ 14a:	df 91       	pop	r29
+ 14c:	08 95       	ret
+
+0000014e <EXTI0_disable>:
+
+void EXTI0_disable(void)
+{
+ 14e:	df 93       	push	r29
+ 150:	cf 93       	push	r28
+ 152:	cd b7       	in	r28, 0x3d	; 61
+ 154:	de b7       	in	r29, 0x3e	; 62
+    CLR_BIT(GICR_Register,INT0);
+ 156:	ab e5       	ldi	r26, 0x5B	; 91
+ 158:	b0 e0       	ldi	r27, 0x00	; 0
+ 15a:	eb e5       	ldi	r30, 0x5B	; 91
+ 15c:	f0 e0       	ldi	r31, 0x00	; 0
+ 15e:	80 81       	ld	r24, Z
+ 160:	8f 7b       	andi	r24, 0xBF	; 191
+ 162:	8c 93       	st	X, r24
+}
+ 164:	cf 91       	pop	r28
+ 166:	df 91       	pop	r29
+ 168:	08 95       	ret
+
+0000016a <EXTI1_disable>:
+
+void EXTI1_disable(void)
+{
+ 16a:	df 93       	push	r29
+ 16c:	cf 93       	push	r28
+ 16e:	cd b7       	in	r28, 0x3d	; 61
+ 170:	de b7       	in	r29, 0x3e	; 62
+    CLR_BIT(GICR_Register,INT1);
+ 172:	ab e5       	ldi	r26, 0x5B	; 91
+ 174:	b0 e0       	ldi	r27, 0x00	; 0
+ 176:	eb e5       	ldi	r30, 0x5B	; 91
+ 178:	f0 e0       	ldi	r31, 0x00	; 0
+ 17a:	80 81       	ld	r24, Z
+ 17c:	8f 77       	andi	r24, 0x7F	; 127
+ 17e:	8c 93       	st	X, r24
+}
+ 180:	cf 91       	pop	r28
+ 182:	df 91       	pop	r29
+ 184:	08 95       	ret
+
+00000186 <EXTI2_disable>:
+
+void EXTI2_disable(void)
+{
+ 186:	df 93       	push	r29
+ 188:	cf 93       	push	r28
+ 18a:	cd b7       	in	r28, 0x3d	; 61
+ 18c:	de b7       	in	r29, 0x3e	; 62
+    CLR_BIT(GICR_Register,INT2);
+ 18e:	ab e5       	ldi	r26, 0x5B	; 91
+ 190:	b0 e0       	ldi	r27, 0x00	; 0
+ 192:	eb e5       	ldi	r30, 0x5B	; 91
+ 194:	f0 e0       	ldi	r31, 0x00	; 0
+ 196:	80 81       	ld	r24, Z
+ 198:	8f 7d       	andi	r24, 0xDF	; 223
+ 19a:	8c 93       	st	X, r24
+}
+ 19c:	cf 91       	pop	r28
+ 19e:	df 91       	pop	r29
+ 1a0:	08 95       	ret
+
+000001a2 <EXTI0_Callback>:
+
+void EXTI0_Callback(void (*ptr)(void))
+{
+ 1a2:	df 93       	push	r29
+ 1a4:	cf 93       	push	r28
+ 1a6:	00 d0       	rcall	.+0      	; 0x1a8 <EXTI0_Callback+0x6>
+ 1a8:	cd b7       	in	r28, 0x3d	; 61
+ 1aa:	de b7       	in	r29, 0x3e	; 62
+ 1ac:	9a 83       	std	Y+2, r25	; 0x02
+ 1ae:	89 83       	std	Y+1, r24	; 0x01
+    Global_EXTI0_ptr=ptr;
+ 1b0:	89 81       	ldd	r24, Y+1	; 0x01
+ 1b2:	9a 81       	ldd	r25, Y+2	; 0x02
+ 1b4:	90 93 61 00 	sts	0x0061, r25
+ 1b8:	80 93 60 00 	sts	0x0060, r24
+}
+ 1bc:	0f 90       	pop	r0
+ 1be:	0f 90       	pop	r0
+ 1c0:	cf 91       	pop	r28
+ 1c2:	df 91       	pop	r29
+ 1c4:	08 95       	ret
+
+000001c6 <EXTI1_Callback>:
+
+void EXTI1_Callback(void (*ptr)(void))
+{
+ 1c6:	df 93       	push	r29
+ 1c8:	cf 93       	push	r28
+ 1ca:	00 d0       	rcall	.+0      	; 0x1cc <EXTI1_Callback+0x6>
+ 1cc:	cd b7       	in	r28, 0x3d	; 61
+ 1ce:	de b7       	in	r29, 0x3e	; 62
+ 1d0:	9a 83       	std	Y+2, r25	; 0x02
+ 1d2:	89 83       	std	Y+1, r24	; 0x01
+    Global_EXTI1_ptr=ptr;
+ 1d4:	89 81       	ldd	r24, Y+1	; 0x01
+ 1d6:	9a 81       	ldd	r25, Y+2	; 0x02
+ 1d8:	90 93 63 00 	sts	0x0063, r25
+ 1dc:	80 93 62 00 	sts	0x0062, r24
+}
+ 1e0:	0f 90       	pop	r0
+ 1e2:	0f 90       	pop	r0
+ 1e4:	cf 91       	pop	r28
+ 1e6:	df 91       	pop	r29
+ 1e8:	08 95       	ret
+
+000001ea <EXTI2_Callback>:
+
+void EXTI2_Callback(void (*ptr)(void))
+{
+ 1ea:	df 93       	push	r29
+ 1ec:	cf 93       	push	r28
+ 1ee:	00 d0       	rcall	.+0      	; 0x1f0 <EXTI2_Callback+0x6>
+ 1f0:	cd b7       	in	r28, 0x3d	; 61
+ 1f2:	de b7       	in	r29, 0x3e	; 62
+ 1f4:	9a 83       	std	Y+2, r25	; 0x02
+ 1f6:	89 83       	std	Y+1, r24	; 0x01
+    Global_EXTI2_ptr=ptr;
+ 1f8:	89 81       	ldd	r24, Y+1	; 0x01
+ 1fa:	9a 81       	ldd	r25, Y+2	; 0x02
+ 1fc:	90 93 65 00 	sts	0x0065, r25
+ 200:	80 93 64 00 	sts	0x0064, r24
+}
+ 204:	0f 90       	pop	r0
+ 206:	0f 90       	pop	r0
+ 208:	cf 91       	pop	r28
+ 20a:	df 91       	pop	r29
+ 20c:	08 95       	ret
+
+0000020e <__vector_1>:
+
+void __vector_1(void)__attribute__((signal));
+void __vector_1()
+{
+ 20e:	1f 92       	push	r1
+ 210:	0f 92       	push	r0
+ 212:	0f b6       	in	r0, 0x3f	; 63
+ 214:	0f 92       	push	r0
+ 216:	11 24       	eor	r1, r1
+ 218:	2f 93       	push	r18
+ 21a:	3f 93       	push	r19
+ 21c:	4f 93       	push	r20
+ 21e:	5f 93       	push	r21
+ 220:	6f 93       	push	r22
+ 222:	7f 93       	push	r23
+ 224:	8f 93       	push	r24
+ 226:	9f 93       	push	r25
+ 228:	af 93       	push	r26
+ 22a:	bf 93       	push	r27
+ 22c:	ef 93       	push	r30
+ 22e:	ff 93       	push	r31
+ 230:	df 93       	push	r29
+ 232:	cf 93       	push	r28
+ 234:	cd b7       	in	r28, 0x3d	; 61
+ 236:	de b7       	in	r29, 0x3e	; 62
+    Global_EXTI0_ptr();
+ 238:	e0 91 60 00 	lds	r30, 0x0060
+ 23c:	f0 91 61 00 	lds	r31, 0x0061
+ 240:	09 95       	icall
+}
+ 242:	cf 91       	pop	r28
+ 244:	df 91       	pop	r29
+ 246:	ff 91       	pop	r31
+ 248:	ef 91       	pop	r30
+ 24a:	bf 91       	pop	r27
+ 24c:	af 91       	pop	r26
+ 24e:	9f 91       	pop	r25
+ 250:	8f 91       	pop	r24
+ 252:	7f 91       	pop	r23
+ 254:	6f 91       	pop	r22
+ 256:	5f 91       	pop	r21
+ 258:	4f 91       	pop	r20
+ 25a:	3f 91       	pop	r19
+ 25c:	2f 91       	pop	r18
+ 25e:	0f 90       	pop	r0
+ 260:	0f be       	out	0x3f, r0	; 63
+ 262:	0f 90       	pop	r0
+ 264:	1f 90       	pop	r1
+ 266:	18 95       	reti
+
+00000268 <__vector_2>:
+void __vector_2(void)__attribute__((signal));
+void __vector_2(void)
+{
+ 268:	1f 92       	push	r1
+ 26a:	0f 92       	push	r0
+ 26c:	0f b6       	in	r0, 0x3f	; 63
+ 26e:	0f 92       	push	r0
+ 270:	11 24       	eor	r1, r1
+ 272:	2f 93       	push	r18
+ 274:	3f 93       	push	r19
+ 276:	4f 93       	push	r20
+ 278:	5f 93       	push	r21
+ 27a:	6f 93       	push	r22
+ 27c:	7f 93       	push	r23
+ 27e:	8f 93       	push	r24
+ 280:	9f 93       	push	r25
+ 282:	af 93       	push	r26
+ 284:	bf 93       	push	r27
+ 286:	ef 93       	push	r30
+ 288:	ff 93       	push	r31
+ 28a:	df 93       	push	r29
+ 28c:	cf 93       	push	r28
+ 28e:	cd b7       	in	r28, 0x3d	; 61
+ 290:	de b7       	in	r29, 0x3e	; 62
+    Global_EXTI1_ptr();
+ 292:	e0 91 62 00 	lds	r30, 0x0062
+ 296:	f0 91 63 00 	lds	r31, 0x0063
+ 29a:	09 95       	icall
+}
+ 29c:	cf 91       	pop	r28
+ 29e:	df 91       	pop	r29
+ 2a0:	ff 91       	pop	r31
+ 2a2:	ef 91       	pop	r30
+ 2a4:	bf 91       	pop	r27
+ 2a6:	af 91       	pop	r26
+ 2a8:	9f 91       	pop	r25
+ 2aa:	8f 91       	pop	r24
+ 2ac:	7f 91       	pop	r23
+ 2ae:	6f 91       	pop	r22
+ 2b0:	5f 91       	pop	r21
+ 2b2:	4f 91       	pop	r20
+ 2b4:	3f 91       	pop	r19
+ 2b6:	2f 91       	pop	r18
+ 2b8:	0f 90       	pop	r0
+ 2ba:	0f be       	out	0x3f, r0	; 63
+ 2bc:	0f 90       	pop	r0
+ 2be:	1f 90       	pop	r1
+ 2c0:	18 95       	reti
+
+000002c2 <__vector_3>:
+void __vector_3(void)__attribute__((signal));
+void __vector_3(void)
+{
+ 2c2:	1f 92       	push	r1
+ 2c4:	0f 92       	push	r0
+ 2c6:	0f b6       	in	r0, 0x3f	; 63
+ 2c8:	0f 92       	push	r0
+ 2ca:	11 24       	eor	r1, r1
+ 2cc:	2f 93       	push	r18
+ 2ce:	3f 93       	push	r19
+ 2d0:	4f 93       	push	r20
+ 2d2:	5f 93       	push	r21
+ 2d4:	6f 93       	push	r22
+ 2d6:	7f 93       	push	r23
+ 2d8:	8f 93       	push	r24
+ 2da:	9f 93       	push	r25
+ 2dc:	af 93       	push	r26
+ 2de:	bf 93       	push	r27
+ 2e0:	ef 93       	push	r30
+ 2e2:	ff 93       	push	r31
+ 2e4:	df 93       	push	r29
+ 2e6:	cf 93       	push	r28
+ 2e8:	cd b7       	in	r28, 0x3d	; 61
+ 2ea:	de b7       	in	r29, 0x3e	; 62
+    Global_EXTI2_ptr();
+ 2ec:	e0 91 64 00 	lds	r30, 0x0064
+ 2f0:	f0 91 65 00 	lds	r31, 0x0065
+ 2f4:	09 95       	icall
+}
+ 2f6:	cf 91       	pop	r28
+ 2f8:	df 91       	pop	r29
+ 2fa:	ff 91       	pop	r31
+ 2fc:	ef 91       	pop	r30
+ 2fe:	bf 91       	pop	r27
+ 300:	af 91       	pop	r26
+ 302:	9f 91       	pop	r25
+ 304:	8f 91       	pop	r24
+ 306:	7f 91       	pop	r23
+ 308:	6f 91       	pop	r22
+ 30a:	5f 91       	pop	r21
+ 30c:	4f 91       	pop	r20
+ 30e:	3f 91       	pop	r19
+ 310:	2f 91       	pop	r18
+ 312:	0f 90       	pop	r0
+ 314:	0f be       	out	0x3f, r0	; 63
+ 316:	0f 90       	pop	r0
+ 318:	1f 90       	pop	r1
+ 31a:	18 95       	reti
+
+0000031c <main>:
+ *      Author: elsay
+ */
+
+
+int main()
+{
+ 31c:	df 93       	push	r29
+ 31e:	cf 93       	push	r28
+ 320:	cd b7       	in	r28, 0x3d	; 61
+ 322:	de b7       	in	r29, 0x3e	; 62
+	return 0;
+ 324:	80 e0       	ldi	r24, 0x00	; 0
+ 326:	90 e0       	ldi	r25, 0x00	; 0
+}
+ 328:	cf 91       	pop	r28
+ 32a:	df 91       	pop	r29
+ 32c:	08 95       	ret
+
+0000032e <_exit>:
+ 32e:	f8 94       	cli
+
+00000330 <__stop_program>:
+ 330:	ff cf       	rjmp	.-2      	; 0x330 <__stop_program>
