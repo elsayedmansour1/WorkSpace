@@ -1,0 +1,60 @@
+20:46:35 **** Build of configuration Debug for project ADC_TEST_2022 ****
+make all 
+Building file: ../MCAL/Global Interrupt/GIE_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"MCAL/Global Interrupt/GIE_prog.d" -MT"MCAL/Global\ Interrupt/GIE_prog.d" -c -o "MCAL/Global Interrupt/GIE_prog.o" "../MCAL/Global Interrupt/GIE_prog.c"
+Finished building: ../MCAL/Global Interrupt/GIE_prog.c
+ 
+Building file: ../MCAL/External Interrupt/EX_INT_Prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"MCAL/External Interrupt/EX_INT_Prog.d" -MT"MCAL/External\ Interrupt/EX_INT_Prog.d" -c -o "MCAL/External Interrupt/EX_INT_Prog.o" "../MCAL/External Interrupt/EX_INT_Prog.c"
+Finished building: ../MCAL/External Interrupt/EX_INT_Prog.c
+ 
+Building file: ../MCAL/DIO/DIO_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"MCAL/DIO/DIO_prog.d" -MT"MCAL/DIO/DIO_prog.o" -c -o "MCAL/DIO/DIO_prog.o" "../MCAL/DIO/DIO_prog.c"
+Finished building: ../MCAL/DIO/DIO_prog.c
+ 
+Building file: ../MCAL/ADC/ADC_Prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"MCAL/ADC/ADC_Prog.d" -MT"MCAL/ADC/ADC_Prog.o" -c -o "MCAL/ADC/ADC_Prog.o" "../MCAL/ADC/ADC_Prog.c"
+../MCAL/ADC/ADC_Prog.c:1:37: error: ../../SERVICE/Std_Types.h: No such file or directory
+../MCAL/ADC/ADC_Prog.c:3:36: error: ../../SERVICE/Bit_Math.h: No such file or directory
+../MCAL/ADC/ADC_Prog.c:10: error: 'NULL' undeclared here (not in a function)
+../MCAL/ADC/ADC_Prog.c: In function 'ADC_VidINIT':
+../MCAL/ADC/ADC_Prog.c:33: warning: implicit declaration of function 'SET_BIT'
+../MCAL/ADC/ADC_Prog.c:33: error: expected ')' before 'u8'
+../MCAL/ADC/ADC_Prog.c:33: warning: type defaults to 'int' in declaration of 'type name'
+../MCAL/ADC/ADC_Prog.c:33: error: invalid type argument of 'unary *' (have 'int')
+../MCAL/ADC/ADC_Prog.c:34: warning: implicit declaration of function 'CLR_BIT'
+../MCAL/ADC/ADC_Prog.c:34: error: expected ')' before 'u8'
+../MCAL/ADC/ADC_Prog.c:34: warning: type defaults to 'int' in declaration of 'type name'
+../MCAL/ADC/ADC_Prog.c:34: error: invalid type argument of 'unary *' (have 'int')
+../MCAL/ADC/ADC_Prog.c:77: error: redefinition of '__vector_16'
+../MCAL/ADC/ADC_Prog.c:19: error: previous definition of '__vector_16' was here
+../MCAL/ADC/ADC_Prog.c: In function 'ADC_VidINIT':
+../MCAL/ADC/ADC_Prog.c:92: warning: implicit declaration of function 'Set_Bit'
+../MCAL/ADC/ADC_Prog.c:93: warning: implicit declaration of function 'Clr_Bit'
+../MCAL/ADC/ADC_Prog.c: In function 'ADC_Start_Conversion':
+../MCAL/ADC/ADC_Prog.c:216: error: expected ')' before 'u8'
+../MCAL/ADC/ADC_Prog.c:216: warning: type defaults to 'int' in declaration of 'type name'
+../MCAL/ADC/ADC_Prog.c:216: error: invalid type argument of 'unary *' (have 'int')
+../MCAL/ADC/ADC_Prog.c: At top level:
+../MCAL/ADC/ADC_Prog.c:218: error: expected ')' before 'Channal'
+../MCAL/ADC/ADC_Prog.c: In function 'ADC_Interrupt_Enable':
+../MCAL/ADC/ADC_Prog.c:225: error: expected ')' before 'u8'
+../MCAL/ADC/ADC_Prog.c:225: warning: type defaults to 'int' in declaration of 'type name'
+../MCAL/ADC/ADC_Prog.c:225: error: invalid type argument of 'unary *' (have 'int')
+../MCAL/ADC/ADC_Prog.c: In function 'ADC_Wait_Flag':
+../MCAL/ADC/ADC_Prog.c:229: error: expected ')' before 'u8'
+../MCAL/ADC/ADC_Prog.c:229: warning: type defaults to 'int' in declaration of 'type name'
+../MCAL/ADC/ADC_Prog.c:229: error: invalid type argument of 'unary *' (have 'int')
+../MCAL/ADC/ADC_Prog.c:230: error: expected ')' before 'u8'
+../MCAL/ADC/ADC_Prog.c:230: warning: type defaults to 'int' in declaration of 'type name'
+../MCAL/ADC/ADC_Prog.c:230: error: invalid type argument of 'unary *' (have 'int')
+../MCAL/ADC/ADC_Prog.c: At top level:
+../MCAL/ADC/ADC_Prog.c:232: error: expected ')' before '*' token
+make: *** [MCAL/ADC/ADC_Prog.o] Error 1
+
+20:46:36 Build Finished (took 969ms)
+

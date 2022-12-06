@@ -1,0 +1,67 @@
+/*
+ * main.c
+ *
+ *  Created on: Sep 3, 2022
+ *      Author: Elsayed.Mansour
+ */
+#include "STD_TYPES.h"
+#include "BIT_MATH.h"
+#include "DIO_INT.h"
+#include"DIO_config.h"
+/**************  Free_RTOS ********************/
+#include "05-Free_RTOS/FreeRTOSConfig.h"
+#include "05-Free_RTOS/FreeRTOS.h"
+#include "05-Free_RTOS/task.h"
+/************** Tasks Prototype********************/
+void vLCD_Task1(void *pv);
+void vLCD_Task2(void *pv);
+/**************************************************/
+int count1=0;
+int count2=0;
+int main()
+{
+	HLCD_VidInit();
+
+	/******  CREATE TASKS  ******/
+	/************************************************
+	 * Parameter :									*
+	 * 1- Function_ Name							*
+	 * 2- Pointer to Constant name for Debugging	*
+	 * 3- Stack Depth								*
+	 * 4- Task Input Parameter As pointer to void 	*
+	 * 5- Task Priority								*
+	 * 6- Task ID (handle) as Pointer to void		*
+	 ************************************************/
+	xTaskCreate(&vLCD_Task1,NULL,100,NULL,3,NULL);
+	xTaskCreate(&vLCD_Task2 ,NULL,100,NULL,2,NULL);
+	/***** Start The Scheduler ******/
+	vTaskStartScheduler();
+
+	while(1)
+	{
+		/****** DO NOTHING *******/
+	}
+
+	return 0;
+}
+void vLCD_Task1(void *pv)
+{
+
+	while(1)
+	{
+		DIO_VidSetPinValue(DIO_PORTA,PIN0,HIGH);
+		vTaskDelay(100);
+	}
+
+}
+void vLCD_Task2(void *pv)
+{
+
+	while(1)
+	{
+		DIO_VidSetPinValue(DIO_PORTA,PIN1,HIGH);
+		HLCD_SetPosition(1,0);
+		HLCD_DisplayString(" 2");
+		vTaskDelay(100);
+	}
+}

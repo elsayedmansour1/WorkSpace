@@ -1,0 +1,79 @@
+20:46:51 **** Build of configuration Debug for project DEMO ****
+make all 
+Building file: ../Wrapping/WDIO/WDIO_PROG.cpp
+Invoking: AVR C++ Compiler
+avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"Wrapping/WDIO/WDIO_PROG.d" -MT"Wrapping/WDIO/WDIO_PROG.o" -c -o "Wrapping/WDIO/WDIO_PROG.o" "../Wrapping/WDIO/WDIO_PROG.cpp"
+Finished building: ../Wrapping/WDIO/WDIO_PROG.cpp
+ 
+Building file: ../MCAL/TIMER2/TIMER2_Program.cpp
+Invoking: AVR C++ Compiler
+avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"MCAL/TIMER2/TIMER2_Program.d" -MT"MCAL/TIMER2/TIMER2_Program.o" -c -o "MCAL/TIMER2/TIMER2_Program.o" "../MCAL/TIMER2/TIMER2_Program.cpp"
+../MCAL/TIMER2/TIMER2_Program.cpp:31: warning: '_Z10__vector_5v' appears to be a misspelled signal handler
+Finished building: ../MCAL/TIMER2/TIMER2_Program.cpp
+ 
+Building file: ../MCAL/TIMER0/TIMER0_Program.cpp
+Invoking: AVR C++ Compiler
+avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"MCAL/TIMER0/TIMER0_Program.d" -MT"MCAL/TIMER0/TIMER0_Program.o" -c -o "MCAL/TIMER0/TIMER0_Program.o" "../MCAL/TIMER0/TIMER0_Program.cpp"
+../MCAL/TIMER0/TIMER0_Program.cpp:34: warning: '_Z11__vector_11v' appears to be a misspelled signal handler
+Finished building: ../MCAL/TIMER0/TIMER0_Program.cpp
+ 
+Building file: ../MCAL/MDIO/MDIO_Program.cpp
+Invoking: AVR C++ Compiler
+avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"MCAL/MDIO/MDIO_Program.d" -MT"MCAL/MDIO/MDIO_Program.o" -c -o "MCAL/MDIO/MDIO_Program.o" "../MCAL/MDIO/MDIO_Program.cpp"
+Finished building: ../MCAL/MDIO/MDIO_Program.cpp
+ 
+Building file: ../MCAL/GIE/MGIE_Program.cpp
+Invoking: AVR C++ Compiler
+avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"MCAL/GIE/MGIE_Program.d" -MT"MCAL/GIE/MGIE_Program.o" -c -o "MCAL/GIE/MGIE_Program.o" "../MCAL/GIE/MGIE_Program.cpp"
+Finished building: ../MCAL/GIE/MGIE_Program.cpp
+ 
+Building file: ../MCAL/External Interrupt/MEXTI_program.cpp
+Invoking: AVR C++ Compiler
+avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"MCAL/External Interrupt/MEXTI_program.d" -MT"MCAL/External\ Interrupt/MEXTI_program.d" -c -o "MCAL/External Interrupt/MEXTI_program.o" "../MCAL/External Interrupt/MEXTI_program.cpp"
+../MCAL/External Interrupt/MEXTI_program.cpp:14:1: warning: "F_CPU" redefined
+<command-line>: warning: this is the location of the previous definition
+In file included from ../MCAL/External Interrupt/MEXTI_program.cpp:15:
+d:/tools/sdk/imt_sdk_win_64/imt_sdk_win_64/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../MCAL/External Interrupt/MEXTI_program.cpp:163: warning: '_Z10__vector_1v' appears to be a misspelled signal handler
+../MCAL/External Interrupt/MEXTI_program.cpp:174: warning: '_Z10__vector_2v' appears to be a misspelled signal handler
+../MCAL/External Interrupt/MEXTI_program.cpp:185: warning: '_Z10__vector_3v' appears to be a misspelled signal handler
+Finished building: ../MCAL/External Interrupt/MEXTI_program.cpp
+ 
+Building file: ../App/main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"App/main.d" -MT"App/main.o" -c -o "App/main.o" "../App/main.c"
+In file included from ../App/main.c:10:
+d:/tools/sdk/imt_sdk_win_64/imt_sdk_win_64/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../App/main.c
+ 
+Building target: DEMO.elf
+Invoking: AVR C++ Linker
+avr-g++ -Wl,-Map,DEMO.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega32 -o "DEMO.elf"  ./Wrapping/WDIO/WDIO_PROG.o  ./MCAL/TIMER2/TIMER2_Program.o  ./MCAL/TIMER0/TIMER0_Program.o  ./MCAL/MDIO/MDIO_PROG.o ./MCAL/MDIO/MDIO_Program.o  ./MCAL/GIE/MGIE_Program.o  ./MCAL/External\ Interrupt/MEXTI_program.o  ./App/main.o   
+Finished building target: DEMO.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S DEMO.elf  >"DEMO.lss"
+Finished building: DEMO.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex DEMO.elf  "DEMO.hex"
+Finished building: DEMO.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 DEMO.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    4702 bytes (14.3% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+20:46:53 Build Finished (took 2s.219ms)
+

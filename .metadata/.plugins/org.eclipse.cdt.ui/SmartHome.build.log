@@ -1,0 +1,138 @@
+20:49:11 **** Build of configuration Debug for project SmartHome ****
+make all 
+Building file: ../SmartHome/MCAL/TWI/TWI_program.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"SmartHome/MCAL/TWI/TWI_program.d" -MT"SmartHome/MCAL/TWI/TWI_program.o" -c -o "SmartHome/MCAL/TWI/TWI_program.o" "../SmartHome/MCAL/TWI/TWI_program.c"
+Finished building: ../SmartHome/MCAL/TWI/TWI_program.c
+ 
+Building file: ../SmartHome/MCAL/TIMER/TIMER_Program.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"SmartHome/MCAL/TIMER/TIMER_Program.d" -MT"SmartHome/MCAL/TIMER/TIMER_Program.o" -c -o "SmartHome/MCAL/TIMER/TIMER_Program.o" "../SmartHome/MCAL/TIMER/TIMER_Program.c"
+Finished building: ../SmartHome/MCAL/TIMER/TIMER_Program.c
+ 
+Building file: ../SmartHome/MCAL/Global Interrupt/GIE_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"SmartHome/MCAL/Global Interrupt/GIE_prog.d" -MT"SmartHome/MCAL/Global\ Interrupt/GIE_prog.d" -c -o "SmartHome/MCAL/Global Interrupt/GIE_prog.o" "../SmartHome/MCAL/Global Interrupt/GIE_prog.c"
+Finished building: ../SmartHome/MCAL/Global Interrupt/GIE_prog.c
+ 
+Building file: ../SmartHome/MCAL/External Interrupt/EX_INT_Prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"SmartHome/MCAL/External Interrupt/EX_INT_Prog.d" -MT"SmartHome/MCAL/External\ Interrupt/EX_INT_Prog.d" -c -o "SmartHome/MCAL/External Interrupt/EX_INT_Prog.o" "../SmartHome/MCAL/External Interrupt/EX_INT_Prog.c"
+Finished building: ../SmartHome/MCAL/External Interrupt/EX_INT_Prog.c
+ 
+Building file: ../SmartHome/MCAL/DIO/DIO_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"SmartHome/MCAL/DIO/DIO_prog.d" -MT"SmartHome/MCAL/DIO/DIO_prog.o" -c -o "SmartHome/MCAL/DIO/DIO_prog.o" "../SmartHome/MCAL/DIO/DIO_prog.c"
+Finished building: ../SmartHome/MCAL/DIO/DIO_prog.c
+ 
+Building file: ../SmartHome/MCAL/ADC/ADC_Prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"SmartHome/MCAL/ADC/ADC_Prog.d" -MT"SmartHome/MCAL/ADC/ADC_Prog.o" -c -o "SmartHome/MCAL/ADC/ADC_Prog.o" "../SmartHome/MCAL/ADC/ADC_Prog.c"
+Finished building: ../SmartHome/MCAL/ADC/ADC_Prog.c
+ 
+Building file: ../SmartHome/HAL/Servo/Servo_program.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"SmartHome/HAL/Servo/Servo_program.d" -MT"SmartHome/HAL/Servo/Servo_program.o" -c -o "SmartHome/HAL/Servo/Servo_program.o" "../SmartHome/HAL/Servo/Servo_program.c"
+In file included from ../SmartHome/HAL/Servo/Servo_program.c:15:
+d:/tools/sdk/imt_sdk_win_64/imt_sdk_win_64/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../SmartHome/HAL/Servo/Servo_program.c
+ 
+Building file: ../SmartHome/HAL/LM35/LM35_Progrm.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"SmartHome/HAL/LM35/LM35_Progrm.d" -MT"SmartHome/HAL/LM35/LM35_Progrm.o" -c -o "SmartHome/HAL/LM35/LM35_Progrm.o" "../SmartHome/HAL/LM35/LM35_Progrm.c"
+In file included from ../SmartHome/HAL/LM35/LM35_Progrm.c:19:
+d:/tools/sdk/imt_sdk_win_64/imt_sdk_win_64/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../SmartHome/HAL/LM35/LM35_Progrm.c
+ 
+Building file: ../SmartHome/HAL/LDR/LDR_Program.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"SmartHome/HAL/LDR/LDR_Program.d" -MT"SmartHome/HAL/LDR/LDR_Program.o" -c -o "SmartHome/HAL/LDR/LDR_Program.o" "../SmartHome/HAL/LDR/LDR_Program.c"
+In file included from ../SmartHome/HAL/LDR/LDR_Program.c:20:
+d:/tools/sdk/imt_sdk_win_64/imt_sdk_win_64/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../SmartHome/HAL/LDR/LDR_Program.c
+ 
+Building file: ../SmartHome/HAL/LCD/LCD_Program.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"SmartHome/HAL/LCD/LCD_Program.d" -MT"SmartHome/HAL/LCD/LCD_Program.o" -c -o "SmartHome/HAL/LCD/LCD_Program.o" "../SmartHome/HAL/LCD/LCD_Program.c"
+In file included from ../SmartHome/HAL/LCD/LCD_Program.c:7:
+d:/tools/sdk/imt_sdk_win_64/imt_sdk_win_64/winavr/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from d:/tools/sdk/imt_sdk_win_64/imt_sdk_win_64/winavr/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../SmartHome/HAL/LCD/LCD_Program.c:7:
+d:/tools/sdk/imt_sdk_win_64/imt_sdk_win_64/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../SmartHome/HAL/LCD/LCD_Program.c: In function 'LCD_4Bits_DisplayString':
+../SmartHome/HAL/LCD/LCD_Program.c:134: warning: comparison between pointer and integer
+Finished building: ../SmartHome/HAL/LCD/LCD_Program.c
+ 
+Building file: ../SmartHome/HAL/Key_pad/Keypad_Program.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"SmartHome/HAL/Key_pad/Keypad_Program.d" -MT"SmartHome/HAL/Key_pad/Keypad_Program.o" -c -o "SmartHome/HAL/Key_pad/Keypad_Program.o" "../SmartHome/HAL/Key_pad/Keypad_Program.c"
+In file included from ../SmartHome/HAL/Key_pad/Keypad_Program.c:6:
+d:/tools/sdk/imt_sdk_win_64/imt_sdk_win_64/winavr/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from d:/tools/sdk/imt_sdk_win_64/imt_sdk_win_64/winavr/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../SmartHome/HAL/Key_pad/Keypad_Program.c:6:
+d:/tools/sdk/imt_sdk_win_64/imt_sdk_win_64/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../SmartHome/HAL/Key_pad/Keypad_Program.c
+ 
+Building file: ../SmartHome/HAL/EEPROM/EEPROM_program.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"SmartHome/HAL/EEPROM/EEPROM_program.d" -MT"SmartHome/HAL/EEPROM/EEPROM_program.o" -c -o "SmartHome/HAL/EEPROM/EEPROM_program.o" "../SmartHome/HAL/EEPROM/EEPROM_program.c"
+In file included from ../SmartHome/HAL/EEPROM/EEPROM_program.c:10:
+d:/tools/sdk/imt_sdk_win_64/imt_sdk_win_64/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../SmartHome/HAL/EEPROM/EEPROM_program.c
+ 
+Building file: ../SmartHome/HAL/DC_Motor/DC_Motor.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"SmartHome/HAL/DC_Motor/DC_Motor.d" -MT"SmartHome/HAL/DC_Motor/DC_Motor.o" -c -o "SmartHome/HAL/DC_Motor/DC_Motor.o" "../SmartHome/HAL/DC_Motor/DC_Motor.c"
+Finished building: ../SmartHome/HAL/DC_Motor/DC_Motor.c
+ 
+Building file: ../SmartHome/HAL/Buzzer/Buzzer.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"SmartHome/HAL/Buzzer/Buzzer.d" -MT"SmartHome/HAL/Buzzer/Buzzer.o" -c -o "SmartHome/HAL/Buzzer/Buzzer.o" "../SmartHome/HAL/Buzzer/Buzzer.c"
+Finished building: ../SmartHome/HAL/Buzzer/Buzzer.c
+ 
+Building file: ../SmartHome/APP/main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"SmartHome/APP/main.d" -MT"SmartHome/APP/main.o" -c -o "SmartHome/APP/main.o" "../SmartHome/APP/main.c"
+In file included from ../SmartHome/APP/main.c:29:
+d:/tools/sdk/imt_sdk_win_64/imt_sdk_win_64/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../SmartHome/APP/main.c: In function 'main':
+../SmartHome/APP/main.c:67: warning: pointer targets in passing argument 1 of 'LCD_4Bits_DisplayString' differ in signedness
+../SmartHome/APP/main.c:76: warning: pointer targets in passing argument 1 of 'LCD_4Bits_DisplayString' differ in signedness
+../SmartHome/APP/main.c:81: warning: pointer targets in passing argument 1 of 'LCD_4Bits_DisplayString' differ in signedness
+../SmartHome/APP/main.c: In function 'INT0_InterruptFunction':
+../SmartHome/APP/main.c:134: warning: pointer targets in passing argument 1 of 'LCD_4Bits_DisplayString' differ in signedness
+../SmartHome/APP/main.c:139: warning: pointer targets in passing argument 1 of 'LCD_4Bits_DisplayString' differ in signedness
+../SmartHome/APP/main.c:155: warning: pointer targets in passing argument 1 of 'LCD_4Bits_DisplayString' differ in signedness
+Finished building: ../SmartHome/APP/main.c
+ 
+Building target: SmartHome.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,SmartHome.map -mmcu=atmega32 -o "SmartHome.elf"  ./SmartHome/MCAL/TWI/TWI_program.o  ./SmartHome/MCAL/TIMER/TIMER_Program.o  ./SmartHome/MCAL/Global\ Interrupt/GIE_prog.o  ./SmartHome/MCAL/External\ Interrupt/EX_INT_Prog.o  ./SmartHome/MCAL/DIO/DIO_prog.o  ./SmartHome/MCAL/ADC/ADC_Prog.o  ./SmartHome/HAL/Servo/Servo_program.o  ./SmartHome/HAL/LM35/LM35_Progrm.o  ./SmartHome/HAL/LDR/LDR_Program.o  ./SmartHome/HAL/LCD/LCD_Program.o  ./SmartHome/HAL/Key_pad/Keypad_Program.o  ./SmartHome/HAL/EEPROM/EEPROM_program.o  ./SmartHome/HAL/DC_Motor/DC_Motor.o  ./SmartHome/HAL/Buzzer/Buzzer.o  ./SmartHome/APP/main.o   
+Finished building target: SmartHome.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S SmartHome.elf  >"SmartHome.lss"
+Finished building: SmartHome.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex SmartHome.elf  "SmartHome.hex"
+Finished building: SmartHome.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 SmartHome.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   18140 bytes (55.4% Full)
+(.text + .data + .bootloader)
+
+Data:        403 bytes (19.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+20:49:14 Build Finished (took 3s.204ms)
+

@@ -1,0 +1,43 @@
+20:48:16 **** Build of configuration Debug for project mady_test_nada ****
+make all 
+Building file: ../EXTI_program.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"EXTI_program.d" -MT"EXTI_program.o" -c -o "EXTI_program.o" "../EXTI_program.c"
+Finished building: ../EXTI_program.c
+ 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: mady_test_nada.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,mady_test_nada.map -mmcu=atmega32 -o "mady_test_nada.elf"  ./EXTI_program.o ./main.o   
+Finished building target: mady_test_nada.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S mady_test_nada.elf  >"mady_test_nada.lss"
+Finished building: mady_test_nada.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex mady_test_nada.elf  "mady_test_nada.hex"
+Finished building: mady_test_nada.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 mady_test_nada.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:     818 bytes (2.5% Full)
+(.text + .data + .bootloader)
+
+Data:          6 bytes (0.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+20:48:17 Build Finished (took 890ms)
+

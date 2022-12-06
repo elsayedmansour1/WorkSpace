@@ -4698,46 +4698,45 @@ u8 TWI_u8SlaveReceiveData(void)
     1ff2:	0f 92       	push	r0
     1ff4:	cd b7       	in	r28, 0x3d	; 61
     1ff6:	de b7       	in	r29, 0x3e	; 62
-
-
+	while((TWSR &0xf8 )!=0x60);
+    1ff8:	e1 e2       	ldi	r30, 0x21	; 33
+    1ffa:	f0 e0       	ldi	r31, 0x00	; 0
+    1ffc:	80 81       	ld	r24, Z
+    1ffe:	88 2f       	mov	r24, r24
+    2000:	90 e0       	ldi	r25, 0x00	; 0
+    2002:	88 7f       	andi	r24, 0xF8	; 248
+    2004:	90 70       	andi	r25, 0x00	; 0
+    2006:	80 36       	cpi	r24, 0x60	; 96
+    2008:	91 05       	cpc	r25, r1
+    200a:	b1 f7       	brne	.-20     	; 0x1ff8 <TWI_u8SlaveReceiveData+0xa>
 	/* Enable ACKnowledgemnet */
 	SET_BIT(TWCR,6);
-    1ff8:	a6 e5       	ldi	r26, 0x56	; 86
-    1ffa:	b0 e0       	ldi	r27, 0x00	; 0
-    1ffc:	e6 e5       	ldi	r30, 0x56	; 86
-    1ffe:	f0 e0       	ldi	r31, 0x00	; 0
-    2000:	80 81       	ld	r24, Z
-    2002:	80 64       	ori	r24, 0x40	; 64
-    2004:	8c 93       	st	X, r24
+    200c:	a6 e5       	ldi	r26, 0x56	; 86
+    200e:	b0 e0       	ldi	r27, 0x00	; 0
+    2010:	e6 e5       	ldi	r30, 0x56	; 86
+    2012:	f0 e0       	ldi	r31, 0x00	; 0
+    2014:	80 81       	ld	r24, Z
+    2016:	80 64       	ori	r24, 0x40	; 64
+    2018:	8c 93       	st	X, r24
 	//make sure flag is clear
 	SET_BIT(TWCR,7);
-    2006:	a6 e5       	ldi	r26, 0x56	; 86
-    2008:	b0 e0       	ldi	r27, 0x00	; 0
-    200a:	e6 e5       	ldi	r30, 0x56	; 86
-    200c:	f0 e0       	ldi	r31, 0x00	; 0
-    200e:	80 81       	ld	r24, Z
-    2010:	80 68       	ori	r24, 0x80	; 128
-    2012:	8c 93       	st	X, r24
+    201a:	a6 e5       	ldi	r26, 0x56	; 86
+    201c:	b0 e0       	ldi	r27, 0x00	; 0
+    201e:	e6 e5       	ldi	r30, 0x56	; 86
+    2020:	f0 e0       	ldi	r31, 0x00	; 0
+    2022:	80 81       	ld	r24, Z
+    2024:	80 68       	ori	r24, 0x80	; 128
+    2026:	8c 93       	st	X, r24
 	//Enable TWI
 	//SET_BIT(TWCR,2);
 	//wait until flag of master receive data to be set
 	while(GET_BIT(TWCR,7)==0);
-    2014:	e6 e5       	ldi	r30, 0x56	; 86
-    2016:	f0 e0       	ldi	r31, 0x00	; 0
-    2018:	80 81       	ld	r24, Z
-    201a:	88 23       	and	r24, r24
-    201c:	dc f7       	brge	.-10     	; 0x2014 <TWI_u8SlaveReceiveData+0x26>
-	while((TWSR &0xf8 )!=0x60);
-    201e:	e1 e2       	ldi	r30, 0x21	; 33
-    2020:	f0 e0       	ldi	r31, 0x00	; 0
-    2022:	80 81       	ld	r24, Z
-    2024:	88 2f       	mov	r24, r24
-    2026:	90 e0       	ldi	r25, 0x00	; 0
-    2028:	88 7f       	andi	r24, 0xF8	; 248
-    202a:	90 70       	andi	r25, 0x00	; 0
-    202c:	80 36       	cpi	r24, 0x60	; 96
-    202e:	91 05       	cpc	r25, r1
-    2030:	b1 f7       	brne	.-20     	; 0x201e <TWI_u8SlaveReceiveData+0x30>
+    2028:	e6 e5       	ldi	r30, 0x56	; 86
+    202a:	f0 e0       	ldi	r31, 0x00	; 0
+    202c:	80 81       	ld	r24, Z
+    202e:	88 23       	and	r24, r24
+    2030:	dc f7       	brge	.-10     	; 0x2028 <TWI_u8SlaveReceiveData+0x3a>
+
 	//check the send data done correctly
 	if((TWSR &0xf8 )!=0x60)
     2032:	e1 e2       	ldi	r30, 0x21	; 33
@@ -4751,8 +4750,6 @@ u8 TWI_u8SlaveReceiveData(void)
     2038:	e3 e2       	ldi	r30, 0x23	; 35
     203a:	f0 e0       	ldi	r31, 0x00	; 0
     203c:	80 81       	ld	r24, Z
-
-
 }
     203e:	0f 90       	pop	r0
     2040:	cf 91       	pop	r28

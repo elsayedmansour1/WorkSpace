@@ -1,0 +1,18 @@
+/*
+ * main.c
+ *
+ *  Created on: Dec 6, 2022
+ *      Author: .noa
+ */
+#include "lib"
+
+
+
+
+int main()
+{
+
+
+	return 0;
+}
+

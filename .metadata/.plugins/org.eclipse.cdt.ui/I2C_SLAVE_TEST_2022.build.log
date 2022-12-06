@@ -1,0 +1,64 @@
+20:47:26 **** Build of configuration Debug for project I2C_SLAVE_TEST_2022 ****
+make all 
+Building file: ../MCAL/TWI/TWI_program.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"MCAL/TWI/TWI_program.d" -MT"MCAL/TWI/TWI_program.o" -c -o "MCAL/TWI/TWI_program.o" "../MCAL/TWI/TWI_program.c"
+Finished building: ../MCAL/TWI/TWI_program.c
+ 
+Building file: ../MCAL/DIO/DIO_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"MCAL/DIO/DIO_prog.d" -MT"MCAL/DIO/DIO_prog.o" -c -o "MCAL/DIO/DIO_prog.o" "../MCAL/DIO/DIO_prog.c"
+Finished building: ../MCAL/DIO/DIO_prog.c
+ 
+Building file: ../HAL/LCD/LCD_Program.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"HAL/LCD/LCD_Program.d" -MT"HAL/LCD/LCD_Program.o" -c -o "HAL/LCD/LCD_Program.o" "../HAL/LCD/LCD_Program.c"
+In file included from ../HAL/LCD/LCD_Program.c:7:
+d:/tools/sdk/imt_sdk_win_64/imt_sdk_win_64/winavr/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from d:/tools/sdk/imt_sdk_win_64/imt_sdk_win_64/winavr/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../HAL/LCD/LCD_Program.c:7:
+d:/tools/sdk/imt_sdk_win_64/imt_sdk_win_64/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../HAL/LCD/LCD_Program.c: In function 'LCD_4Bits_DisplayString':
+../HAL/LCD/LCD_Program.c:134: warning: comparison between pointer and integer
+Finished building: ../HAL/LCD/LCD_Program.c
+ 
+Building file: ../APP/main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"APP/main.d" -MT"APP/main.o" -c -o "APP/main.o" "../APP/main.c"
+In file included from ../APP/main.c:18:
+d:/tools/sdk/imt_sdk_win_64/imt_sdk_win_64/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../APP/main.c: In function 'main':
+../APP/main.c:29: warning: pointer targets in passing argument 1 of 'LCD_4Bits_DisplayString' differ in signedness
+Finished building: ../APP/main.c
+ 
+Building target: I2C_SLAVE_TEST_2022.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,I2C_SLAVE_TEST_2022.map -mmcu=atmega32 -o "I2C_SLAVE_TEST_2022.elf"  ./MCAL/TWI/TWI_program.o  ./MCAL/DIO/DIO_prog.o  ./HAL/LCD/LCD_Program.o  ./APP/main.o   
+Finished building target: I2C_SLAVE_TEST_2022.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S I2C_SLAVE_TEST_2022.elf  >"I2C_SLAVE_TEST_2022.lss"
+Finished building: I2C_SLAVE_TEST_2022.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex I2C_SLAVE_TEST_2022.elf  "I2C_SLAVE_TEST_2022.hex"
+Finished building: I2C_SLAVE_TEST_2022.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 I2C_SLAVE_TEST_2022.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   10468 bytes (31.9% Full)
+(.text + .data + .bootloader)
+
+Data:         22 bytes (1.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+20:47:28 Build Finished (took 1s.343ms)
+

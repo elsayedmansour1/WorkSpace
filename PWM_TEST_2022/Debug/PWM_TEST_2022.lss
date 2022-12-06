@@ -6708,10 +6708,10 @@ _delay_ms(double __ms)
     2d7c:	81 e0       	ldi	r24, 0x01	; 1
     2d7e:	0e 94 a3 13 	call	0x2746	; 0x2746 <LCD_VidWriteCommend>
 	//Set Duty Cycle
-		Set_Duty_Cycle_TIMER_1_A(2.5);
+		Set_Duty_Cycle_TIMER_1_A(3);
     2d82:	60 e0       	ldi	r22, 0x00	; 0
     2d84:	70 e0       	ldi	r23, 0x00	; 0
-    2d86:	80 e2       	ldi	r24, 0x20	; 32
+    2d86:	80 e4       	ldi	r24, 0x40	; 64
     2d88:	90 e4       	ldi	r25, 0x40	; 64
     2d8a:	0e 94 17 0a 	call	0x142e	; 0x142e <Set_Duty_Cycle_TIMER_1_A>
 		LCD_VidWriteString("Angle=0");

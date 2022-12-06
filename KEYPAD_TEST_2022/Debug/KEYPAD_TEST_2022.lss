@@ -7657,8 +7657,8 @@ void KEYPAD_VidInit(void)
     3290:	cf 93       	push	r28
     3292:	cd b7       	in	r28, 0x3d	; 61
     3294:	de b7       	in	r29, 0x3e	; 62
-	/*we will set the first 4-pins as output by set 0 in direction*/
-	 /*and set the second 4-pins as input by set 1 in direction*/
+	/*we will set the first 4-pins as output by set 1 in direction*/
+	 /*and set the second 4-pins as input by set 0 in direction*/
 	DIO_VidSetPortDirection ( DIO_Keypad,0b00001111);
     3296:	82 e0       	ldi	r24, 0x02	; 2
     3298:	6f e0       	ldi	r22, 0x0F	; 15
@@ -7722,8 +7722,8 @@ u8 KEYPAD_GET_PressedKey(void)
     32fa:	ee a1       	ldd	r30, Y+38	; 0x26
     32fc:	ee 23       	and	r30, r30
     32fe:	51 f7       	brne	.-44     	; 0x32d4 <KEYPAD_GET_PressedKey+0x28>
-	/*Columns for input pins*/
-	 /*Rows for output pins*/
+	/*Columns for output pins*/
+	 /*Rows for input pins*/
 	u8 col,row;
 	/*keypad_out variable for Get the pressed switch*/
 	u8 keypad_out=0;
@@ -7950,8 +7950,8 @@ _delay_ms(double __ms)
     3452:	69 89       	ldd	r22, Y+17	; 0x11
     3454:	41 e0       	ldi	r20, 0x01	; 1
     3456:	0e 94 bc 0f 	call	0x1f78	; 0x1f78 <DIO_VidSetPinValue>
-	/*Columns for input pins*/
-	 /*Rows for output pins*/
+	/*Columns for output pins*/
+	 /*Rows for input pins*/
 	u8 col,row;
 	/*keypad_out variable for Get the pressed switch*/
 	u8 keypad_out=0;

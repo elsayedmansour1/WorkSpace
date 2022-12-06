@@ -1,0 +1,33 @@
+12:26:30 **** Incremental Build of configuration Debug for project FeeRTOS_TEST ****
+make all 
+Building target: FeeRTOS_TEST.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,FeeRTOS_TEST.map -mmcu=atmega32 -o "FeeRTOS_TEST.elf"  ./MCAL/DIO/DIO_prog.o  ./HAL/LCD/LCD_Program.o  ./HAL/Key_pad/Keypad_Program.o  ./FREE_RTOS/croutine.o ./FREE_RTOS/heap_1.o ./FREE_RTOS/list.o ./FREE_RTOS/port.o ./FREE_RTOS/queue.o ./FREE_RTOS/tasks.o ./FREE_RTOS/timers.o  ./APP/main.o   
+Finished building target: FeeRTOS_TEST.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S FeeRTOS_TEST.elf  >"FeeRTOS_TEST.lss"
+Finished building: FeeRTOS_TEST.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex FeeRTOS_TEST.elf  "FeeRTOS_TEST.hex"
+Finished building: FeeRTOS_TEST.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 FeeRTOS_TEST.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   18434 bytes (56.3% Full)
+(.text + .data + .bootloader)
+
+Data:       1482 bytes (72.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+12:26:31 Build Finished (took 811ms)
+

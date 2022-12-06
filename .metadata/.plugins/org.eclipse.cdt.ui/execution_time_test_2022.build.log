@@ -1,0 +1,76 @@
+20:47:11 **** Build of configuration Debug for project execution_time_test_2022 ****
+make all 
+Building file: ../MCAL/TIMER1/TIMER1_Program.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"MCAL/TIMER1/TIMER1_Program.d" -MT"MCAL/TIMER1/TIMER1_Program.o" -c -o "MCAL/TIMER1/TIMER1_Program.o" "../MCAL/TIMER1/TIMER1_Program.c"
+Finished building: ../MCAL/TIMER1/TIMER1_Program.c
+ 
+Building file: ../MCAL/MDIO/MDIO_Program.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"MCAL/MDIO/MDIO_Program.d" -MT"MCAL/MDIO/MDIO_Program.o" -c -o "MCAL/MDIO/MDIO_Program.o" "../MCAL/MDIO/MDIO_Program.c"
+Finished building: ../MCAL/MDIO/MDIO_Program.c
+ 
+Building file: ../MCAL/GIE/MGIE_Program.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"MCAL/GIE/MGIE_Program.d" -MT"MCAL/GIE/MGIE_Program.o" -c -o "MCAL/GIE/MGIE_Program.o" "../MCAL/GIE/MGIE_Program.c"
+Finished building: ../MCAL/GIE/MGIE_Program.c
+ 
+Building file: ../MCAL/External Interrupt/MEXTI_Program.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"MCAL/External Interrupt/MEXTI_Program.d" -MT"MCAL/External\ Interrupt/MEXTI_Program.d" -c -o "MCAL/External Interrupt/MEXTI_Program.o" "../MCAL/External Interrupt/MEXTI_Program.c"
+Finished building: ../MCAL/External Interrupt/MEXTI_Program.c
+ 
+Building file: ../HAL/HLCD/HLCD_Program.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"HAL/HLCD/HLCD_Program.d" -MT"HAL/HLCD/HLCD_Program.o" -c -o "HAL/HLCD/HLCD_Program.o" "../HAL/HLCD/HLCD_Program.c"
+In file included from ../HAL/HLCD/HLCD_Program.c:5:
+d:/tools/sdk/imt_sdk_win_64/imt_sdk_win_64/winavr/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from d:/tools/sdk/imt_sdk_win_64/imt_sdk_win_64/winavr/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../HAL/HLCD/HLCD_Program.c:5:
+d:/tools/sdk/imt_sdk_win_64/imt_sdk_win_64/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../HAL/HLCD/HLCD_Program.c:65:7: warning: extra tokens at end of #endif directive
+../HAL/HLCD/HLCD_Program.c: In function 'HLCD_DisplayString':
+../HAL/HLCD/HLCD_Program.c:151: warning: comparison between pointer and integer
+Finished building: ../HAL/HLCD/HLCD_Program.c
+ 
+Building file: ../APP/main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"APP/main.d" -MT"APP/main.o" -c -o "APP/main.o" "../APP/main.c"
+In file included from ../APP/main.c:16:
+d:/tools/sdk/imt_sdk_win_64/imt_sdk_win_64/winavr/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from d:/tools/sdk/imt_sdk_win_64/imt_sdk_win_64/winavr/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../APP/main.c:16:
+d:/tools/sdk/imt_sdk_win_64/imt_sdk_win_64/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../APP/main.c
+ 
+Building target: execution_time_test_2022.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,execution_time_test_2022.map -mmcu=atmega32 -o "execution_time_test_2022.elf"  ./MCAL/TIMER1/TIMER1_Program.o  ./MCAL/MDIO/MDIO_Program.o  ./MCAL/GIE/MGIE_Program.o  ./MCAL/External\ Interrupt/MEXTI_Program.o  ./HAL/HLCD/HLCD_Program.o  ./APP/main.o   
+Finished building target: execution_time_test_2022.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S execution_time_test_2022.elf  >"execution_time_test_2022.lss"
+Finished building: execution_time_test_2022.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex execution_time_test_2022.elf  "execution_time_test_2022.hex"
+Finished building: execution_time_test_2022.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 execution_time_test_2022.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   10596 bytes (32.3% Full)
+(.text + .data + .bootloader)
+
+Data:         17 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+20:47:13 Build Finished (took 1s.596ms)
+
