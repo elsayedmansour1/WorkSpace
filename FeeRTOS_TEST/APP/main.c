@@ -13,19 +13,22 @@
 #include "../FREE_RTOS/FreeRTOSConfig.h"
 #include "../Free_RTOS/FreeRTOS.h"
 #include "../FREE_RTOS/task.h"
-
+#include "../FREE_RTOS/semphr.h"
 /*Prototype for tasks*/
 void LED_Task1(void *ptr);
 void LED_Task2(void *ptr);
 
-
+xSemaphoreHandle ledsem;
+xSemaphoreHandle ledsem1;
 int main()
 {
 	DIO_VidSetPinDirection(DIO_PORTA,PIN0,OUTPUT);//led1
 	DIO_VidSetPinDirection(DIO_PORTA,PIN1,OUTPUT);//led2
-
-	xTaskCreate(LED_Task1,NULL,100,NULL,1,NULL);
-	xTaskCreate(LED_Task2,NULL,100,NULL,1,NULL);
+	DIO_VidSetPinDirection(DIO_PORTA,PIN2,OUTPUT);//led3
+	vSemaphoreCreateBinary(ledsem);
+	ledsem1=xSemaphoreCreateCounting(7,7);
+	xTaskCreate(LED_Task1,NULL,100,NULL,3,NULL);
+	xTaskCreate(LED_Task2,NULL,100,NULL,2,NULL);
 
 	vTaskStartScheduler();
 
@@ -39,7 +42,16 @@ void LED_Task1(void *ptr)
 {
 	while(1)
 	{
-		DIO_u8TogglePinValue(DIO_PORTA,PIN0);
+		if(xSemaphoreTake(ledsem1,0))
+		{
+			DIO_u8TogglePinValue(DIO_PORTA,PIN0);
+			xSemaphoreGive(ledsem1);
+		}
+//		else
+//		{
+//			DIO_u8TogglePinValue(DIO_PORTA,PIN2);
+//		}
+		vTaskDelay(5000);
 	}
 
 }
@@ -47,6 +59,12 @@ void LED_Task2(void *ptr)
 {
 	while(1)
 	{
-		DIO_u8TogglePinValue(DIO_PORTA,PIN1);
+		if(xSemaphoreTake(ledsem1,0))
+		{
+			DIO_u8TogglePinValue(DIO_PORTA,PIN1);
+			//xSemaphoreGive(ledsem1);
+		}
+
+		vTaskDelay(5000);
 	}
 }

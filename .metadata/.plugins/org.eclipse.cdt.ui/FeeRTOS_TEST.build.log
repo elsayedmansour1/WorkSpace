@@ -1,5 +1,10 @@
-12:26:30 **** Incremental Build of configuration Debug for project FeeRTOS_TEST ****
+13:50:06 **** Incremental Build of configuration Debug for project FeeRTOS_TEST ****
 make all 
+Building file: ../APP/main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"APP/main.d" -MT"APP/main.o" -c -o "APP/main.o" "../APP/main.c"
+Finished building: ../APP/main.c
+ 
 Building target: FeeRTOS_TEST.elf
 Invoking: AVR C Linker
 avr-gcc -Wl,-Map,FeeRTOS_TEST.map -mmcu=atmega32 -o "FeeRTOS_TEST.elf"  ./MCAL/DIO/DIO_prog.o  ./HAL/LCD/LCD_Program.o  ./HAL/Key_pad/Keypad_Program.o  ./FREE_RTOS/croutine.o ./FREE_RTOS/heap_1.o ./FREE_RTOS/list.o ./FREE_RTOS/port.o ./FREE_RTOS/queue.o ./FREE_RTOS/tasks.o ./FREE_RTOS/timers.o  ./APP/main.o   
@@ -19,15 +24,15 @@ AVR Memory Usage
 ----------------
 Device: atmega32
 
-Program:   18434 bytes (56.3% Full)
+Program:   18600 bytes (56.8% Full)
 (.text + .data + .bootloader)
 
-Data:       1482 bytes (72.4% Full)
+Data:       1486 bytes (72.6% Full)
 (.data + .bss + .noinit)
 
 
 Finished building: sizedummy
  
 
-12:26:31 Build Finished (took 811ms)
+13:50:07 Build Finished (took 853ms)
 
