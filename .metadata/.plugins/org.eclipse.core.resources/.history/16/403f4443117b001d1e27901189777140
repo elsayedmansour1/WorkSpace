@@ -1,0 +1,40 @@
+/*
+ * File:   main.c
+ * Author: Ingi
+ *
+ * Created on December 6, 2022, 11:39 PM
+ */
+#include "FreeRTOS.h"
+#include "STD_TYPES.h"
+#include "BIT_MATH.h"
+#include "DioInterface.h"
+#include "FreeRTOSConfig.h"
+#include "task.h"
+
+void lcd_task1(void *ptr);
+void lcd_task2(void *ptr);
+
+void main(void) {
+    DioSetPinDirection(PORTA,0,OUTPUT);
+    DioSetPinDirection(PORTA,1,OUTPUT); 
+    xTaskCreate(lcd_task1,NULL,100,NULL,1,NULL);
+    xTaskCreate(lcd_task2,NULL,100,NULL,2,NULL);//pv parameter can be passed to task
+    vTaskStartScheduler();
+    while(1){
+    
+    }//not to quit scheduler
+    
+    return;
+}
+void lcd_task1(void *ptr){//toggle led
+    while(1){//not to delete data as local variables
+  DioSetPinValue(PORTA,0,1);
+  vTaskDelay(500);
+    }
+}
+void lcd_task2(void *ptr){
+  while(1){//not to delete data as local variables
+  DioSetPinValue(PORTA,1,1);
+  vTaskDelay(500);
+    }
+}

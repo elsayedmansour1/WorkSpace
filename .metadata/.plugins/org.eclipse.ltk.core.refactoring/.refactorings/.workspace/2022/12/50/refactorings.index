@@ -7,3 +7,6 @@
 1670322290098	Delete resource 'FeeRTOS_TEST/MCAL/External Interrupt'
 1670322295991	Delete resource 'FeeRTOS_TEST/MCAL/Global Interrupt'
 1670322360008	Delete resource 'FeeRTOS_TEST/HAL/EEPROM'
+1670362346577	Delete 7 resources
+1670362349373	Delete resource 'free_rtos/MCAL/ADC'
+1670362357368	Delete resource 'free_rtos/HAL/EEPROM'

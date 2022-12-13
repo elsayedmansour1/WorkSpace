@@ -1,0 +1,38 @@
+/*
+ * main.c
+ *
+ *  Created on: Dec 6, 2022
+ *      Author: .noa
+ */
+#include "../LIB/STD_TYPES.h"
+#include "../LIB/BIT_MATH.h"
+
+#include "../MCAL/DIO/DIO_INT.h"
+#include "../MCAL/DIO/DIO_config.h"
+
+#include "../FREE_RTOS/FreeRTOSConfig.h"
+#include "../FREE_RTOS/task.h"
+
+void led_task1(void);
+void led_task2(void);
+
+int main()
+{
+	DIO_VidSetPinDirection(DIO_PORTA,PIN0,OUTPUT);
+	DIO_VidSetPinDirection(DIO_PORTA,PIN1,OUTPUT);
+	xTaskCreate(led_task1,NULL,100,NULL,4,NULL);
+	xTaskCreate(led_task2,NULL,100,NULL,2,NULL);
+
+	vTaskStartScheduler();
+	return 0;
+}
+
+void led_task1(void)
+{
+	DIO_VidSetPinValue(DIO_PORTA,PIN0,HIGH);
+}
+void led_task2(void)
+{
+	DIO_VidSetPinValue(DIO_PORTA,PIN1,HIGH);
+}
+

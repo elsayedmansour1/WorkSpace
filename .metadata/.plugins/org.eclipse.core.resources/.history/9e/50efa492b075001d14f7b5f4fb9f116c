@@ -1,0 +1,34 @@
+/*
+ * main.c
+ *
+ *  Created on: Dec 6, 2022
+ *      Author: .noa
+ */
+#include "../LIB/STD_TYPES.h"
+#include "../LIB/BIT_MATH.h"
+
+#include "../MCAL/DIO/DIO_INT.h"
+#include "../MCAL/DIO/DIO_config.h"
+
+#include "../FREE_RTOS/FreeRTOSConfig.h"
+#include "../FREE_RTOS/task.h"
+
+void led_task1(void);
+void led_task2(void);
+
+int main()
+{
+
+
+	return 0;
+}
+
+void led_task1(void)
+{
+	DIO_VidSetPinValue(DIO_PORTA,PIN0,HIGH);
+}
+void led_task2(void)
+{
+	DIO_VidSetPinValue(DIO_PORTA,PIN2,HIGH);
+}
+

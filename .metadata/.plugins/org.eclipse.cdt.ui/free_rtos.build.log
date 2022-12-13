@@ -1,0 +1,38 @@
+01:39:03 **** Incremental Build of configuration Debug for project free_rtos ****
+make all 
+Building file: ../APP/main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"APP/main.d" -MT"APP/main.o" -c -o "APP/main.o" "../APP/main.c"
+Finished building: ../APP/main.c
+ 
+Building target: free_rtos.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,free_rtos.map -mmcu=atmega32 -o "free_rtos.elf"  ./MCAL/DIO/DIO_prog.o  ./HAL/LCD/LCD_Program.o  ./HAL/Key_pad/Keypad_Program.o  ./FREE_RTOS/croutine.o ./FREE_RTOS/heap_1.o ./FREE_RTOS/list.o ./FREE_RTOS/port.o ./FREE_RTOS/queue.o ./FREE_RTOS/tasks.o ./FREE_RTOS/timers.o  ./APP/main.o   
+Finished building target: free_rtos.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S free_rtos.elf  >"free_rtos.lss"
+Finished building: free_rtos.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex free_rtos.elf  "free_rtos.hex"
+Finished building: free_rtos.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 free_rtos.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   18590 bytes (56.7% Full)
+(.text + .data + .bootloader)
+
+Data:       1495 bytes (73.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+01:39:05 Build Finished (took 2s.488ms)
+
