@@ -1,0 +1,52 @@
+/*
+ * File:   main.c
+ * Author: Ingi
+ *
+ * Created on February 1, 2023, 7:42 PM
+ */
+#define CPU_F 8000000
+#include "DioInterface.h"
+#include "FreeRTOS.h"
+#include "FreeRTOSConfig.h"
+#include "task.h"
+
+void led_task1(void* ptr1);
+void led_task2(void* ptr2);
+
+
+void main(void) {
+	 DioSetPinDirection(PORTA,0,OUTPUT);
+	 DioSetPinDirection(PORTA,1,OUTPUT);
+
+	//max priority =2
+	 xTaskCreate(led_task1,NULL,100,NULL,1,NULL);
+	 xTaskCreate(led_task2,NULL,100,NULL,0,NULL);
+
+	 vTaskStartScheduler();
+
+	 while(1){
+
+	 }
+
+
+     
+    return;
+}
+
+void led_task1(void* ptr1){
+     while(1){
+ DioSetPinValue(PORTA,0,1);
+ vTaskDelay(1000); //periodicity
+ DioSetPinValue(PORTA,0,0);
+ vTaskDelay(1000); //periodicity
+
+     }
+ }
+ void led_task2(void* ptr2){
+     while(1){
+    	 DioSetPinValue(PORTA,1,1);
+    	 vTaskDelay(1000); //periodicity
+    	 DioSetPinValue(PORTA,1,0);
+    	 vTaskDelay(1000); //periodicity
+     }
+ }

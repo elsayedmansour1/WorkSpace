@@ -71,7 +71,7 @@ TIMER0_TEST_2022.hex: TIMER0_TEST_2022.elf
 
 sizedummy: TIMER0_TEST_2022.elf
 	@echo 'Invoking: Print Size'
-	-avr-size --format=avr --mcu=atmega32 TIMER0_TEST_2022.elf
+	-avr-size --format=berkeley -t TIMER0_TEST_2022.elf
 	@echo 'Finished building: $@'
 	@echo ' '
 

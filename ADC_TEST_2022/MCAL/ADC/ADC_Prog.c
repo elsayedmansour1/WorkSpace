@@ -1,6 +1,6 @@
-#include "../../SERVICE/Std_Types.h"
+#include "../../LIB/BIT_MATH.h"
 
-#include "../../SERVICE/Bit_Math.h"
+#include "../../LIB/STD_TYPES.h"
 #include"ADC_Reg.h"
 #include"ADC_Config.h"
 #include"../Global Interrupt/GIE_Config.h"
@@ -74,13 +74,7 @@ void ADC_SetCallBack(void(*LocPFunc)(void))
 GPFunc=LocPFunc;
 }
 /***********ISR FUNCTION ***********/
-ISR(__vector_16)
-{
-	if(GPFunc!=NULL)
-	{
-		GPFunc();
-	}
-}
+
 
 void ADC_VidINIT(void)
 {

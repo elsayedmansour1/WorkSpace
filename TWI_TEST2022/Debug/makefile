@@ -64,7 +64,7 @@ TWI_TEST2022.hex: TWI_TEST2022.elf
 
 sizedummy: TWI_TEST2022.elf
 	@echo 'Invoking: Print Size'
-	-avr-size --format=avr --mcu=atmega32 TWI_TEST2022.elf
+	-avr-size --format=berkeley -t TWI_TEST2022.elf
 	@echo 'Finished building: $@'
 	@echo ' '
 

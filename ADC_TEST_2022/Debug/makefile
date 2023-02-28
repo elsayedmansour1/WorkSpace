@@ -70,7 +70,7 @@ ADC_TEST_2022.hex: ADC_TEST_2022.elf
 
 sizedummy: ADC_TEST_2022.elf
 	@echo 'Invoking: Print Size'
-	-avr-size --format=avr --mcu=atmega32 ADC_TEST_2022.elf
+	-avr-size --format=berkeley -t ADC_TEST_2022.elf
 	@echo 'Finished building: $@'
 	@echo ' '
 
