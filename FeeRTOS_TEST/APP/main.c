@@ -12,6 +12,7 @@
 #include "../MCAL/ADC/ADC_Config.h"
 
 #include "../HAL/LCD/LCD_Interface.h"
+#include "../HAL/LM35/LM35_Interface.h"
 
 #include "../FREE_RTOS/FreeRTOSConfig.h"
 #include "../Free_RTOS/FreeRTOS.h"
@@ -59,11 +60,7 @@ void Sensor_1(void *ptr)
 {
 	while(1)
 	{
-	    ADC_Select_Channal(ADC7);
-	    ADC_Enable();
-	    ADC_Start_Conversion();
-	    ADC_Wait_Flag();
-	    ADC_Get_Result(&ADC_Result_S1);
+		LM35_ReadTemperture(ADC6,&ADC_Result_S1);
 		vTaskDelay(1000);
 	}
 
@@ -72,11 +69,7 @@ void Sensor_2(void *ptr)
 {
 	while(1)
 	{
-	    ADC_Select_Channal(ADC6);
-	    ADC_Enable();
-	    ADC_Start_Conversion();
-	    ADC_Wait_Flag();
-	    ADC_Get_Result(&ADC_Result_S2);
+	    LM35_ReadTemperture(ADC7,&ADC_Result_S2);
 		vTaskDelay(1000);
 	}
 
@@ -90,9 +83,7 @@ void LCD_MonitoringTask1(void *ptr)
 		if(xSemaphoreTake(ledsem,0))
 		{
 			LCD_GoToXY(0,8);
-			u16 Temperature=5;
-			Temperature = ((5000UL*ADC_Result_S1)>> 10) / 10 ;
-			LCD_VidWriteNumber(Temperature);
+			LCD_VidWriteNumber(ADC_Result_S1);
 			xSemaphoreGive(ledsem);
 		}
 		vTaskDelay(1000);
@@ -107,9 +98,7 @@ void LCD_MonitoringTask2(void *ptr)
 		if(xSemaphoreTake(ledsem,0))
 		{
 			LCD_GoToXY(1,8);
-			u16 Temperature=5;
-			Temperature = ((5000UL*ADC_Result_S2)>> 10) / 10 ;
-			LCD_VidWriteNumber(Temperature);
+			LCD_VidWriteNumber(ADC_Result_S2);
 			xSemaphoreGive(ledsem);
 		}
 		vTaskDelay(1000);
